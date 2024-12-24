@@ -15,6 +15,7 @@ proguard/
 .idea/
 *.iml
 *.hprof
+.gitignore
 
 # Lint reports
 lint/intermediates/
