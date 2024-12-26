@@ -26,6 +26,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -199,42 +200,43 @@ fun ShoppingList() {
 fun ShoppingListItems(
     item: ShoppingItems, onEditClick: () -> Unit, onDeleteClick: () -> Unit
 ) {
-
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-            .border(
-                border = BorderStroke(2.dp, Color(0XFF018786)), shape = RoundedCornerShape(20)
-            )
-
-    ) {
-
-        Column {
-
-            Text(
-                text = "Item: ${item.itemName}",
-                modifier = Modifier
-                    .padding(10.dp)
-                    .align(Alignment.CenterHorizontally)
-            )
-
-            Text(text = "Qty:${item.iQty}", modifier = Modifier.padding(8.dp))
-        }
-
+    Card(modifier = Modifier.padding(10.dp)
+        .background(color = Color.White)) {
         Row(
-            modifier = Modifier.padding(10.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
 
-            ) {
+        ) {
 
-            IconButton(onClick = onEditClick) {
-                Icon(imageVector = Icons.Default.Edit, contentDescription = null)
+            Column {
+
+                Text(
+                    text = "Item: ${item.itemName}",
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .align(Alignment.CenterHorizontally)
+                )
+
+                Text(text = "Qty:${item.iQty}", modifier = Modifier.padding(8.dp))
             }
-            IconButton(onClick = onDeleteClick) {
-                Icon(imageVector = Icons.Default.Delete, contentDescription = null)
+
+            Row(
+                modifier = Modifier.padding(10.dp),
+
+                ) {
+
+                IconButton(onClick = onEditClick) {
+                    Icon(imageVector = Icons.Default.Edit, contentDescription = null)
+                }
+                IconButton(onClick = onDeleteClick) {
+                    Icon(imageVector = Icons.Default.Delete, contentDescription = null)
+                }
             }
         }
     }
+
+
 }
 
 
