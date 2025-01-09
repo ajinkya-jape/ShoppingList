@@ -1,11 +1,13 @@
 package dev.ajinkyajape.shoppinglist.ui.screens.shopping
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -27,7 +29,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -35,6 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.text.isDigitsOnly
+import dev.ajinkyajape.shoppinglist.R
 
 /**
  * Created By Ajinkya Jape on 26/12/2024
@@ -57,10 +62,10 @@ fun ShoppingList() {
             Icon(Icons.Filled.Add, contentDescription = "Add")
         }
     }) { paddingValues ->
+
         Column(
             modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center
         ) {
-
 
             Card(
                 modifier = Modifier
@@ -82,13 +87,27 @@ fun ShoppingList() {
             Box(modifier = Modifier.padding(paddingValues)) {
 
                 if (shoppingItemsList.isEmpty()) {
-                    Text(
-                        modifier = Modifier
-                            .padding(20.dp)
-                            .fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                        text = "No Items"
-                    )
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+
+                        Image(
+                            modifier = Modifier.size(50.dp, 50.dp),
+                            painter = painterResource(R.drawable.empty_cart),
+                            contentDescription = "Cart"
+                        )
+
+                        Text(
+                            modifier = Modifier
+                                .padding(20.dp)
+                                .fillMaxWidth(),
+                            textAlign = TextAlign.Center,
+                            text = "No Items",
+                            fontWeight = FontWeight.W700
+                        )
+                    }
                 } else {
                     LazyColumn(
                         modifier = Modifier
@@ -134,7 +153,15 @@ fun ShoppingList() {
         itemQty = "1"
         AlertDialog(
             onDismissRequest = { isShowDialog = false },
-            title = { Text("Add Shopping Item") },
+            title = {
+                Text(
+                    modifier = Modifier.fillMaxWidth(),
+                    text = "Add Shopping Item",
+                    fontSize = 19.sp,
+                    textAlign = TextAlign.Center,
+                    fontWeight = FontWeight.Bold
+                )
+            },
             text = {
                 Column {
                     OutlinedTextField(

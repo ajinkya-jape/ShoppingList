@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.ajinkyajape.shoppinglist.room.ProductAction
-import dev.ajinkyajape.shoppinglist.room.ProductDao
 import dev.ajinkyajape.shoppinglist.room.ProductDatabase
 import dev.ajinkyajape.shoppinglist.room.ProductModel
 import kotlinx.coroutines.flow.MutableStateFlow
