@@ -3,6 +3,11 @@
 
 A modern, intuitive shopping list app built with Jetpack Compose and Material Icons for Android.
 
+## Screen Shots
+
+[App Screenshots] (assets/101.png)
+
+
 ## Features
 
 - Add Items: Quickly add items to your shopping list.
