@@ -11,12 +11,16 @@ import androidx.compose.ui.Modifier
 import dev.ajinkyajape.shoppinglist.ui.screens.shopping.ShoppingList
 import dev.ajinkyajape.shoppinglist.ui.theme.ShoppingListTheme
 
+/**
+ * Created By Ajinkya Jape on 26/12/2024
+ * */
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
 
+        setContent {
             ShoppingListTheme {
                 Surface(
                     modifier = Modifier.wrapContentSize(),
