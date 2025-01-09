@@ -5,7 +5,7 @@ A modern, intuitive shopping list app built with Jetpack Compose and Material Ic
 
 ## Screen Shots
 
-[App Screenshots] (assets/101.png)
+[App Screenshots] ('101.png')
 
 
 ## Features
