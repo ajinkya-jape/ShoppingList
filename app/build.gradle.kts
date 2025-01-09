@@ -67,4 +67,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     debugImplementation(libs.androidx.material.icons.extended)
+
+    // View Model
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+
+    //Room DB
+    implementation (libs.androidx.room.runtime)
+    annotationProcessor (libs.androidx.room.compiler)
 }
