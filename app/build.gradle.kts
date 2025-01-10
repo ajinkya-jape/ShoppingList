@@ -70,8 +70,4 @@ dependencies {
 
     // View Model
     implementation (libs.androidx.lifecycle.viewmodel.compose)
-
-    //Room DB
-    implementation (libs.androidx.room.runtime)
-    annotationProcessor (libs.androidx.room.compiler)
 }
