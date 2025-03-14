@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopping List</string>
+    <string name="app_name">ShopEase</string>
     <string name="add_item">Add Item</string>
     <string name="close">Close</string>
     <string name="save">Save</string>
